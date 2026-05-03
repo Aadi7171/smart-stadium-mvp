@@ -1,0 +1,88 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --bg-base: #0A0A0B;
+    --bg-card: #15151A;
+    --text-primary: #E8E8EA;
+    --text-muted: #8A8A92;
+    --accent-amber: #FFA726;
+    --state-clear: #10B981;
+    --state-moderate: #F59E0B;
+    --state-critical: #EF4444;
+    --border-hairline: #2A2A30;
+
+    --background: var(--bg-base);
+    --foreground: var(--text-primary);
+    --card: var(--bg-card);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-card);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--accent-amber);
+    --primary-foreground: #000000;
+    --secondary: var(--bg-card);
+    --secondary-foreground: var(--text-primary);
+    --muted: #1f1f26;
+    --muted-foreground: var(--text-muted);
+    --accent: var(--bg-card);
+    --accent-foreground: var(--text-primary);
+    --destructive: var(--state-critical);
+    --destructive-foreground: var(--text-primary);
+    --border: var(--border-hairline);
+    --input: var(--border-hairline);
+    --ring: var(--accent-amber);
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: var(--bg-base);
+    --foreground: var(--text-primary);
+    --card: var(--bg-card);
+    --card-foreground: var(--text-primary);
+    --popover: var(--bg-card);
+    --popover-foreground: var(--text-primary);
+    --primary: var(--accent-amber);
+    --primary-foreground: #000000;
+    --secondary: var(--bg-card);
+    --secondary-foreground: var(--text-primary);
+    --muted: #1f1f26;
+    --muted-foreground: var(--text-muted);
+    --accent: var(--bg-card);
+    --accent-foreground: var(--text-primary);
+    --destructive: var(--state-critical);
+    --destructive-foreground: var(--text-primary);
+    --border: var(--border-hairline);
+    --input: var(--border-hairline);
+    --ring: var(--accent-amber);
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
