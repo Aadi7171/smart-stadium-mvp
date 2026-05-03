@@ -13,6 +13,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
 });
 
+
 export const metadata: Metadata = {
   title: "Smart Stadium Command Center",
   description: "Agentic Command Center for Stadium Operations",

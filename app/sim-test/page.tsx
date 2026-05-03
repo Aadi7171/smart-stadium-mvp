@@ -18,8 +18,6 @@ export default function SimTestPage() {
   }, []);
 
   const [commandText, setCommandText] = useState("Simulate redirecting 40% from Gate 3 to Gates 4 and 5");
-
-  if (!mounted) return <div className="min-h-screen bg-background" />;
   const [parsedCommand, setParsedCommand] = useState<any>(null);
   const [states, setStates] = useState<GateState[]>([]);
   const [simulation, setSimulation] = useState<any>(null);
@@ -32,6 +30,8 @@ export default function SimTestPage() {
       clearInterval(interval);
     };
   }, []);
+
+  if (!mounted) return <div className="min-h-screen bg-background" />;
 
   const handleTest = () => {
     const cmd = parseCommand(commandText);

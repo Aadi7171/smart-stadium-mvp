@@ -1,15 +1,7 @@
-import { GateState, Persona, RoutingPolicy } from "../types/schema";
+import { GateState, Persona, RoutingPolicy, SimulationResult } from "../types/schema";
 
-export interface SimulationResult {
-  projectedStates: GateState[];
-  totalThroughputDelta: number;
-  personaBreakdown: {
-    personaId: string;
-    complianceRate: number;
-    redirectedCount: number;
-  }[];
-  confidenceRange: [number, number];
-}
+
+
 
 export function simulateRouting(
   policy: RoutingPolicy,

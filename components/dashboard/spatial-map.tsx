@@ -38,39 +38,41 @@ export function SpatialMap() {
             
             return (
               <Tooltip key={gate.id}>
-                <TooltipTrigger asChild>
-                  <motion.g
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    className="cursor-pointer"
+                <TooltipTrigger
+                  render={
+                    <motion.g
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      whileHover={{ scale: 1.2 }}
+                      className="cursor-pointer"
+                    />
+                  }
+                >
+                  <circle
+                    cx={gate.location.x}
+                    cy={gate.location.y}
+                    r="12"
+                    fill={color}
+                    className="transition-colors duration-500"
+                  />
+                  <circle
+                    cx={gate.location.x}
+                    cy={gate.location.y}
+                    r="18"
+                    fill="transparent"
+                    stroke={color}
+                    strokeWidth="1"
+                    className="animate-ping opacity-20"
+                  />
+                  <text
+                    x={gate.location.x}
+                    y={gate.location.y + 30}
+                    textAnchor="middle"
+                    fill="#8A8A92"
+                    className="text-[10px] font-mono pointer-events-none"
                   >
-                    <circle
-                      cx={gate.location.x}
-                      cy={gate.location.y}
-                      r="12"
-                      fill={color}
-                      className="transition-colors duration-500"
-                    />
-                    <circle
-                      cx={gate.location.x}
-                      cy={gate.location.y}
-                      r="18"
-                      fill="transparent"
-                      stroke={color}
-                      strokeWidth="1"
-                      className="animate-ping opacity-20"
-                    />
-                    <text
-                      x={gate.location.x}
-                      y={gate.location.y + 30}
-                      textAnchor="middle"
-                      fill="#8A8A92"
-                      className="text-[10px] font-mono pointer-events-none"
-                    >
-                      G{gate.id}
-                    </text>
-                  </motion.g>
+                    G{gate.id}
+                  </text>
                 </TooltipTrigger>
                 <TooltipContent className="bg-card border-border text-primary font-mono text-xs">
                   <div className="space-y-1">

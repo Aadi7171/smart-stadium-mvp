@@ -95,3 +95,17 @@ export const EmergencyEventSchema = z.object({
 });
 
 export type EmergencyEvent = z.infer<typeof EmergencyEventSchema>;
+
+// Simulation Result
+export const SimulationResultSchema = z.object({
+  projectedStates: z.array(GateStateSchema),
+  totalThroughputDelta: z.number(),
+  personaBreakdown: z.array(z.object({
+    personaId: z.string(),
+    complianceRate: z.number(),
+    redirectedCount: z.number(),
+  })),
+  confidenceRange: z.tuple([z.number(), z.number()]),
+});
+
+export type SimulationResult = z.infer<typeof SimulationResultSchema>;
